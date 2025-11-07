@@ -164,7 +164,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1567, 749);
+            this.tabPage2.Size = new System.Drawing.Size(1567, 761);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Soldering Temp.";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -231,7 +231,7 @@
             this.solderingTempToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1599, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(1599, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -242,7 +242,7 @@
             this.editToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.torqueRecordToolStripMenuItem.Name = "torqueRecordToolStripMenuItem";
-            this.torqueRecordToolStripMenuItem.Size = new System.Drawing.Size(142, 32);
+            this.torqueRecordToolStripMenuItem.Size = new System.Drawing.Size(142, 29);
             this.torqueRecordToolStripMenuItem.Text = "Torque Record";
             // 
             // addToolStripMenuItem
@@ -270,7 +270,7 @@
             this.editToolStripMenuItem1,
             this.deleteToolStripMenuItem1});
             this.solderingTempToolStripMenuItem.Name = "solderingTempToolStripMenuItem";
-            this.solderingTempToolStripMenuItem.Size = new System.Drawing.Size(152, 32);
+            this.solderingTempToolStripMenuItem.Size = new System.Drawing.Size(152, 29);
             this.solderingTempToolStripMenuItem.Text = "Soldering Temp";
             // 
             // addToolStripMenuItem1
