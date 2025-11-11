@@ -101,6 +101,12 @@
     <Compile Include="FormAddSolder.Designer.cs">
       <DependentUpon>FormAddSolder.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEditTemp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditTemp.Designer.cs">
+      <DependentUpon>FrmEditTemp.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEditTorque.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAddSolder.resx">
       <DependentUpon>FormAddSolder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditTemp.resx">
+      <DependentUpon>FrmEditTemp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEditTorque.resx">
       <DependentUpon>FrmEditTorque.cs</DependentUpon>

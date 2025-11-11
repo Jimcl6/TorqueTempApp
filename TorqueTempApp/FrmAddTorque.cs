@@ -23,15 +23,18 @@ namespace TorqueTempApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string query = "INSERT INTO torque_records (driver_model, control_no, driver_type, process_assigned, person_in_charge, line_assigned, time_am, torque_am, time_pm, torque_pm, col_remarks, checked_by) " +
-                   "VALUES (@driver_model, @control_no, @driver_type, @process_assigned, @person_in_charge, @line_assigned, @time_am, @torque_am, @time_pm, @torque_pm, @col_remarks, @checked_by)";
+            string query = "INSERT INTO torque_records (date, model_series,driver_model, control_no, screw_type, driver_type, process_assigned, person_in_charge, line_assigned, time_am, torque_am, time_pm, torque_pm, col_remarks, checked_by) " +
+                   "VALUES (@date, @model_series, @driver_model, @control_no, @screw_type, @driver_type, @process_assigned, @person_in_charge, @line_assigned, @time_am, @torque_am, @time_pm, @torque_pm, @col_remarks, @checked_by)";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             using (MySqlCommand cmd = new MySqlCommand(query, conn))
             {
+                cmd.Parameters.AddWithValue("@date", dateTimePicker.Value);
+                cmd.Parameters.AddWithValue("@model_series", txtModelSeries.Text);
                 cmd.Parameters.AddWithValue("@driver_model", txtDriverModel.Text);
                 cmd.Parameters.AddWithValue("@control_no", txtControlNo.Text);
-                cmd.Parameters.AddWithValue("@driver_type", txtDriverType.Text);
+                cmd.Parameters.AddWithValue("@screw_type", txtScrewType.Text);
+                cmd.Parameters.AddWithValue("@driver_type", cmbEquipmentType.Text);
                 cmd.Parameters.AddWithValue("@process_assigned", txtProcessAssigned.Text);
                 cmd.Parameters.AddWithValue("@person_in_charge", txtPersonInCharge.Text);
                 cmd.Parameters.AddWithValue("@col_remarks", richTxtRemarks.Text);
