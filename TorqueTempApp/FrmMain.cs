@@ -21,15 +21,17 @@ namespace TorqueTempApp
             LoadTempRecords(); // Load data when main form opens
         }
 
+        private DataTable originalData;
+
         private void LoadTorqueRecords()
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 string query = "SELECT * FROM torque_records";
                 MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
+                originalData = new DataTable();
+                da.Fill(originalData);
+                dataGridView1.DataSource = originalData;
             }
         }
 
@@ -107,27 +109,27 @@ namespace TorqueTempApp
             // Get selected record ID
             int recordId = Convert.ToInt32(dataGridView1.CurrentRow.Cells["id"].Value);
 
-            // Pass this ID to the edit form
+            
             FrmEditTorque editForm = new FrmEditTorque(recordId);
             editForm.StartPosition = FormStartPosition.CenterScreen;
             editForm.ShowDialog();
 
             if (editForm.DialogResult == DialogResult.OK)
             {
-                LoadTorqueRecords(); // refresh grid after editing
+                LoadTorqueRecords(); 
             }
         }
 
         private void btnSoldAdd_Click(object sender, EventArgs e)
         {
-            // Open the Add form
+            
             FrmAddSolder addSolder = new FrmAddSolder();
             addSolder.StartPosition = FormStartPosition.CenterScreen;
 
-            // Show the form and check if user clicked "Add Record"
+            
             if (addSolder.ShowDialog() == DialogResult.OK)
             {
-                LoadTempRecords(); // Refresh the data grid
+                LoadTempRecords(); 
             }
         }
 
@@ -138,20 +140,76 @@ namespace TorqueTempApp
                 MessageBox.Show("Please select a record to edit.", "No Record Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            // Get selected record ID
+            
             int recordId = Convert.ToInt32(dataGridView1.CurrentRow.Cells["id"].Value);
 
-            //MessageBox.Show($"Editing record ID: {recordId}");
-
-            // Pass this ID to the edit form
             FrmEditTorque editForm = new FrmEditTorque(recordId);
             editForm.StartPosition = FormStartPosition.CenterScreen;
             editForm.ShowDialog();
 
             if (editForm.DialogResult == DialogResult.OK)
             {
-                LoadTempRecords(); // refresh grid after editing
+                LoadTempRecords(); 
+            }
+        }
+
+        private void btnApplyFilter_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                if (string.IsNullOrWhiteSpace(txtFilter.Text))
+                {
+                    MessageBox.Show("Please enter a value to filter.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string filterValue = txtFilter.Text.Trim();
+                string filterColumn = string.Empty;
+
+                
+                if (rdoDate.Checked)
+                    filterColumn = "date";
+                else if (rdoScrew.Checked)
+                    filterColumn = "screw_type";
+                else if (rdoModelSeries.Checked)
+                    filterColumn = "model_series";
+                else if (rdoLine.Checked)
+                    filterColumn = "line_assigned";
+                else
+                {
+                    MessageBox.Show("Please select a filter criterion.", "No Filter Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                
+                DataView dv = new DataView(originalData);
+
+                
+                if (rdoDate.Checked)
+                {
+                    
+                    if (!DateTime.TryParseExact(filterValue, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dateValue))
+                    {
+                        MessageBox.Show("Invalid date format. Please use dd/MM/yyyy.", "Format Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    
+                    dv.RowFilter = string.Format("CONVERT([{0}], 'System.String') LIKE '%{1}%'", filterColumn, dateValue.ToString("yyyy-MM-dd"));
+                }
+                else
+                {
+                    
+                    dv.RowFilter = string.Format("CONVERT([{0}], 'System.String') LIKE '%{1}%'", filterColumn, filterValue.Replace("'", "''"));
+                }
+
+                
+                dataGridView1.DataSource = dv;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error applying filter: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

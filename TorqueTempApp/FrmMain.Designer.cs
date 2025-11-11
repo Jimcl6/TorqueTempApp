@@ -48,12 +48,12 @@
             this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdBtnLine = new System.Windows.Forms.RadioButton();
-            this.rdBtnModelSeries = new System.Windows.Forms.RadioButton();
-            this.rdBtnScrewType = new System.Windows.Forms.RadioButton();
-            this.rdBtnDate = new System.Windows.Forms.RadioButton();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.rdoLine = new System.Windows.Forms.RadioButton();
+            this.rdoModelSeries = new System.Windows.Forms.RadioButton();
+            this.rdoScrew = new System.Windows.Forms.RadioButton();
+            this.rdoDate = new System.Windows.Forms.RadioButton();
+            this.txtFilter = new System.Windows.Forms.TextBox();
+            this.btnApplyFilter = new System.Windows.Forms.Button();
             this.tabMainControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -243,12 +243,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rdBtnLine);
-            this.groupBox1.Controls.Add(this.rdBtnModelSeries);
-            this.groupBox1.Controls.Add(this.rdBtnScrewType);
-            this.groupBox1.Controls.Add(this.rdBtnDate);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.rdoLine);
+            this.groupBox1.Controls.Add(this.rdoModelSeries);
+            this.groupBox1.Controls.Add(this.rdoScrew);
+            this.groupBox1.Controls.Add(this.rdoDate);
+            this.groupBox1.Controls.Add(this.txtFilter);
+            this.groupBox1.Controls.Add(this.btnApplyFilter);
             this.groupBox1.Location = new System.Drawing.Point(9, 8);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(347, 201);
@@ -256,66 +256,67 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter By:";
             // 
-            // rdBtnLine
+            // rdoLine
             // 
-            this.rdBtnLine.AutoSize = true;
-            this.rdBtnLine.Location = new System.Drawing.Point(187, 112);
-            this.rdBtnLine.Name = "rdBtnLine";
-            this.rdBtnLine.Size = new System.Drawing.Size(72, 32);
-            this.rdBtnLine.TabIndex = 9;
-            this.rdBtnLine.TabStop = true;
-            this.rdBtnLine.Text = "Line";
-            this.rdBtnLine.UseVisualStyleBackColor = true;
+            this.rdoLine.AutoSize = true;
+            this.rdoLine.Location = new System.Drawing.Point(187, 112);
+            this.rdoLine.Name = "rdoLine";
+            this.rdoLine.Size = new System.Drawing.Size(72, 32);
+            this.rdoLine.TabIndex = 9;
+            this.rdoLine.TabStop = true;
+            this.rdoLine.Text = "Line";
+            this.rdoLine.UseVisualStyleBackColor = true;
             // 
-            // rdBtnModelSeries
+            // rdoModelSeries
             // 
-            this.rdBtnModelSeries.AutoSize = true;
-            this.rdBtnModelSeries.Location = new System.Drawing.Point(7, 113);
-            this.rdBtnModelSeries.Name = "rdBtnModelSeries";
-            this.rdBtnModelSeries.Size = new System.Drawing.Size(150, 32);
-            this.rdBtnModelSeries.TabIndex = 9;
-            this.rdBtnModelSeries.TabStop = true;
-            this.rdBtnModelSeries.Text = "Model Series";
-            this.rdBtnModelSeries.UseVisualStyleBackColor = true;
+            this.rdoModelSeries.AutoSize = true;
+            this.rdoModelSeries.Location = new System.Drawing.Point(7, 113);
+            this.rdoModelSeries.Name = "rdoModelSeries";
+            this.rdoModelSeries.Size = new System.Drawing.Size(150, 32);
+            this.rdoModelSeries.TabIndex = 9;
+            this.rdoModelSeries.TabStop = true;
+            this.rdoModelSeries.Text = "Model Series";
+            this.rdoModelSeries.UseVisualStyleBackColor = true;
             // 
-            // rdBtnScrewType
+            // rdoScrew
             // 
-            this.rdBtnScrewType.AutoSize = true;
-            this.rdBtnScrewType.Location = new System.Drawing.Point(187, 74);
-            this.rdBtnScrewType.Name = "rdBtnScrewType";
-            this.rdBtnScrewType.Size = new System.Drawing.Size(134, 32);
-            this.rdBtnScrewType.TabIndex = 9;
-            this.rdBtnScrewType.TabStop = true;
-            this.rdBtnScrewType.Text = "Screw Type";
-            this.rdBtnScrewType.UseVisualStyleBackColor = true;
+            this.rdoScrew.AutoSize = true;
+            this.rdoScrew.Location = new System.Drawing.Point(187, 74);
+            this.rdoScrew.Name = "rdoScrew";
+            this.rdoScrew.Size = new System.Drawing.Size(134, 32);
+            this.rdoScrew.TabIndex = 9;
+            this.rdoScrew.TabStop = true;
+            this.rdoScrew.Text = "Screw Type";
+            this.rdoScrew.UseVisualStyleBackColor = true;
             // 
-            // rdBtnDate
+            // rdoDate
             // 
-            this.rdBtnDate.AutoSize = true;
-            this.rdBtnDate.Location = new System.Drawing.Point(7, 75);
-            this.rdBtnDate.Name = "rdBtnDate";
-            this.rdBtnDate.Size = new System.Drawing.Size(78, 32);
-            this.rdBtnDate.TabIndex = 9;
-            this.rdBtnDate.TabStop = true;
-            this.rdBtnDate.Text = "Date";
-            this.rdBtnDate.UseVisualStyleBackColor = true;
+            this.rdoDate.AutoSize = true;
+            this.rdoDate.Location = new System.Drawing.Point(7, 75);
+            this.rdoDate.Name = "rdoDate";
+            this.rdoDate.Size = new System.Drawing.Size(78, 32);
+            this.rdoDate.TabIndex = 9;
+            this.rdoDate.TabStop = true;
+            this.rdoDate.Text = "Date";
+            this.rdoDate.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // txtFilter
             // 
-            this.textBox2.Location = new System.Drawing.Point(7, 34);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(333, 34);
-            this.textBox2.TabIndex = 8;
+            this.txtFilter.Location = new System.Drawing.Point(7, 34);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(333, 34);
+            this.txtFilter.TabIndex = 8;
             // 
-            // btnSearch
+            // btnApplyFilter
             // 
-            this.btnSearch.Location = new System.Drawing.Point(7, 152);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(333, 39);
-            this.btnSearch.TabIndex = 7;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnApplyFilter.Location = new System.Drawing.Point(7, 152);
+            this.btnApplyFilter.Margin = new System.Windows.Forms.Padding(4);
+            this.btnApplyFilter.Name = "btnApplyFilter";
+            this.btnApplyFilter.Size = new System.Drawing.Size(333, 39);
+            this.btnApplyFilter.TabIndex = 7;
+            this.btnApplyFilter.Text = "Search";
+            this.btnApplyFilter.UseVisualStyleBackColor = true;
+            this.btnApplyFilter.Click += new System.EventHandler(this.btnApplyFilter_Click);
             // 
             // FrmMain
             // 
@@ -368,12 +369,12 @@
         private System.Windows.Forms.Button btnSoldEdit;
         private System.Windows.Forms.Button btnSoldAdd;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rdBtnLine;
-        private System.Windows.Forms.RadioButton rdBtnModelSeries;
-        private System.Windows.Forms.RadioButton rdBtnScrewType;
-        private System.Windows.Forms.RadioButton rdBtnDate;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.RadioButton rdoLine;
+        private System.Windows.Forms.RadioButton rdoModelSeries;
+        private System.Windows.Forms.RadioButton rdoScrew;
+        private System.Windows.Forms.RadioButton rdoDate;
+        private System.Windows.Forms.TextBox txtFilter;
+        private System.Windows.Forms.Button btnApplyFilter;
     }
 }
 
