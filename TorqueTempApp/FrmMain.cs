@@ -44,7 +44,7 @@ namespace TorqueTempApp
                 MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
                 originalTempData = new DataTable();
                 da.Fill(originalTempData);
-                dataGridView1.DataSource = originalTempData;
+                dataGridView2.DataSource = originalTempData;
             }
         }
 
