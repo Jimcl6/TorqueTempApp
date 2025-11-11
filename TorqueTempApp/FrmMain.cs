@@ -21,7 +21,8 @@ namespace TorqueTempApp
             LoadTempRecords(); // Load data when main form opens
         }
 
-        private DataTable originalData;
+        private DataTable originalTorqueData;
+        private DataTable originalTempData;
 
         private void LoadTorqueRecords()
         {
@@ -29,9 +30,9 @@ namespace TorqueTempApp
             {
                 string query = "SELECT * FROM torque_records";
                 MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
-                originalData = new DataTable();
-                da.Fill(originalData);
-                dataGridView1.DataSource = originalData;
+                originalTorqueData = new DataTable();
+                da.Fill(originalTorqueData);
+                dataGridView1.DataSource = originalTorqueData;
             }
         }
 
@@ -41,9 +42,9 @@ namespace TorqueTempApp
             {
                 string query = "SELECT * FROM temp_records";
                 MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView2.DataSource = dt;
+                originalTempData = new DataTable();
+                da.Fill(originalTempData);
+                dataGridView1.DataSource = originalTempData;
             }
         }
 
@@ -153,7 +154,7 @@ namespace TorqueTempApp
             }
         }
 
-        private void btnApplyFilter_Click(object sender, EventArgs e)
+        private void btnApplyFilterTorque_Click(object sender, EventArgs e)
         {
             try
             {
@@ -183,7 +184,7 @@ namespace TorqueTempApp
                 }
 
                 
-                DataView dv = new DataView(originalData);
+                DataView dv = new DataView(originalTorqueData);
 
                 
                 if (rdoDate.Checked)

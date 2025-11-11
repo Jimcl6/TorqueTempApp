@@ -31,6 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.tabMainControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdoLine = new System.Windows.Forms.RadioButton();
+            this.rdoModelSeries = new System.Windows.Forms.RadioButton();
+            this.rdoScrew = new System.Windows.Forms.RadioButton();
+            this.rdoDate = new System.Windows.Forms.RadioButton();
+            this.txtFilter = new System.Windows.Forms.TextBox();
+            this.btnApplyFilterTorque = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnTorqueEdit = new System.Windows.Forms.Button();
             this.btnTorqueAdd = new System.Windows.Forms.Button();
@@ -47,20 +54,13 @@
             this.addToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdoLine = new System.Windows.Forms.RadioButton();
-            this.rdoModelSeries = new System.Windows.Forms.RadioButton();
-            this.rdoScrew = new System.Windows.Forms.RadioButton();
-            this.rdoDate = new System.Windows.Forms.RadioButton();
-            this.txtFilter = new System.Windows.Forms.TextBox();
-            this.btnApplyFilter = new System.Windows.Forms.Button();
             this.tabMainControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMainControl
@@ -88,6 +88,83 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Torque";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rdoLine);
+            this.groupBox1.Controls.Add(this.rdoModelSeries);
+            this.groupBox1.Controls.Add(this.rdoScrew);
+            this.groupBox1.Controls.Add(this.rdoDate);
+            this.groupBox1.Controls.Add(this.txtFilter);
+            this.groupBox1.Controls.Add(this.btnApplyFilterTorque);
+            this.groupBox1.Location = new System.Drawing.Point(9, 8);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(347, 201);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filter By:";
+            // 
+            // rdoLine
+            // 
+            this.rdoLine.AutoSize = true;
+            this.rdoLine.Location = new System.Drawing.Point(187, 112);
+            this.rdoLine.Name = "rdoLine";
+            this.rdoLine.Size = new System.Drawing.Size(72, 32);
+            this.rdoLine.TabIndex = 9;
+            this.rdoLine.TabStop = true;
+            this.rdoLine.Text = "Line";
+            this.rdoLine.UseVisualStyleBackColor = true;
+            // 
+            // rdoModelSeries
+            // 
+            this.rdoModelSeries.AutoSize = true;
+            this.rdoModelSeries.Location = new System.Drawing.Point(7, 113);
+            this.rdoModelSeries.Name = "rdoModelSeries";
+            this.rdoModelSeries.Size = new System.Drawing.Size(150, 32);
+            this.rdoModelSeries.TabIndex = 9;
+            this.rdoModelSeries.TabStop = true;
+            this.rdoModelSeries.Text = "Model Series";
+            this.rdoModelSeries.UseVisualStyleBackColor = true;
+            // 
+            // rdoScrew
+            // 
+            this.rdoScrew.AutoSize = true;
+            this.rdoScrew.Location = new System.Drawing.Point(187, 74);
+            this.rdoScrew.Name = "rdoScrew";
+            this.rdoScrew.Size = new System.Drawing.Size(134, 32);
+            this.rdoScrew.TabIndex = 9;
+            this.rdoScrew.TabStop = true;
+            this.rdoScrew.Text = "Screw Type";
+            this.rdoScrew.UseVisualStyleBackColor = true;
+            // 
+            // rdoDate
+            // 
+            this.rdoDate.AutoSize = true;
+            this.rdoDate.Location = new System.Drawing.Point(7, 75);
+            this.rdoDate.Name = "rdoDate";
+            this.rdoDate.Size = new System.Drawing.Size(78, 32);
+            this.rdoDate.TabIndex = 9;
+            this.rdoDate.TabStop = true;
+            this.rdoDate.Text = "Date";
+            this.rdoDate.UseVisualStyleBackColor = true;
+            // 
+            // txtFilter
+            // 
+            this.txtFilter.Location = new System.Drawing.Point(7, 34);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(333, 34);
+            this.txtFilter.TabIndex = 8;
+            // 
+            // btnApplyFilterTorque
+            // 
+            this.btnApplyFilterTorque.Location = new System.Drawing.Point(7, 152);
+            this.btnApplyFilterTorque.Margin = new System.Windows.Forms.Padding(4);
+            this.btnApplyFilterTorque.Name = "btnApplyFilterTorque";
+            this.btnApplyFilterTorque.Size = new System.Drawing.Size(333, 39);
+            this.btnApplyFilterTorque.TabIndex = 7;
+            this.btnApplyFilterTorque.Text = "Search";
+            this.btnApplyFilterTorque.UseVisualStyleBackColor = true;
+            this.btnApplyFilterTorque.Click += new System.EventHandler(this.btnApplyFilterTorque_Click);
             // 
             // dataGridView1
             // 
@@ -241,83 +318,6 @@
             this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(164, 34);
             this.deleteToolStripMenuItem1.Text = "Delete";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rdoLine);
-            this.groupBox1.Controls.Add(this.rdoModelSeries);
-            this.groupBox1.Controls.Add(this.rdoScrew);
-            this.groupBox1.Controls.Add(this.rdoDate);
-            this.groupBox1.Controls.Add(this.txtFilter);
-            this.groupBox1.Controls.Add(this.btnApplyFilter);
-            this.groupBox1.Location = new System.Drawing.Point(9, 8);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(347, 201);
-            this.groupBox1.TabIndex = 15;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filter By:";
-            // 
-            // rdoLine
-            // 
-            this.rdoLine.AutoSize = true;
-            this.rdoLine.Location = new System.Drawing.Point(187, 112);
-            this.rdoLine.Name = "rdoLine";
-            this.rdoLine.Size = new System.Drawing.Size(72, 32);
-            this.rdoLine.TabIndex = 9;
-            this.rdoLine.TabStop = true;
-            this.rdoLine.Text = "Line";
-            this.rdoLine.UseVisualStyleBackColor = true;
-            // 
-            // rdoModelSeries
-            // 
-            this.rdoModelSeries.AutoSize = true;
-            this.rdoModelSeries.Location = new System.Drawing.Point(7, 113);
-            this.rdoModelSeries.Name = "rdoModelSeries";
-            this.rdoModelSeries.Size = new System.Drawing.Size(150, 32);
-            this.rdoModelSeries.TabIndex = 9;
-            this.rdoModelSeries.TabStop = true;
-            this.rdoModelSeries.Text = "Model Series";
-            this.rdoModelSeries.UseVisualStyleBackColor = true;
-            // 
-            // rdoScrew
-            // 
-            this.rdoScrew.AutoSize = true;
-            this.rdoScrew.Location = new System.Drawing.Point(187, 74);
-            this.rdoScrew.Name = "rdoScrew";
-            this.rdoScrew.Size = new System.Drawing.Size(134, 32);
-            this.rdoScrew.TabIndex = 9;
-            this.rdoScrew.TabStop = true;
-            this.rdoScrew.Text = "Screw Type";
-            this.rdoScrew.UseVisualStyleBackColor = true;
-            // 
-            // rdoDate
-            // 
-            this.rdoDate.AutoSize = true;
-            this.rdoDate.Location = new System.Drawing.Point(7, 75);
-            this.rdoDate.Name = "rdoDate";
-            this.rdoDate.Size = new System.Drawing.Size(78, 32);
-            this.rdoDate.TabIndex = 9;
-            this.rdoDate.TabStop = true;
-            this.rdoDate.Text = "Date";
-            this.rdoDate.UseVisualStyleBackColor = true;
-            // 
-            // txtFilter
-            // 
-            this.txtFilter.Location = new System.Drawing.Point(7, 34);
-            this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(333, 34);
-            this.txtFilter.TabIndex = 8;
-            // 
-            // btnApplyFilter
-            // 
-            this.btnApplyFilter.Location = new System.Drawing.Point(7, 152);
-            this.btnApplyFilter.Margin = new System.Windows.Forms.Padding(4);
-            this.btnApplyFilter.Name = "btnApplyFilter";
-            this.btnApplyFilter.Size = new System.Drawing.Size(333, 39);
-            this.btnApplyFilter.TabIndex = 7;
-            this.btnApplyFilter.Text = "Search";
-            this.btnApplyFilter.UseVisualStyleBackColor = true;
-            this.btnApplyFilter.Click += new System.EventHandler(this.btnApplyFilter_Click);
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -336,13 +336,13 @@
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.tabMainControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,7 +374,7 @@
         private System.Windows.Forms.RadioButton rdoScrew;
         private System.Windows.Forms.RadioButton rdoDate;
         private System.Windows.Forms.TextBox txtFilter;
-        private System.Windows.Forms.Button btnApplyFilter;
+        private System.Windows.Forms.Button btnApplyFilterTorque;
     }
 }
 
