@@ -36,16 +36,16 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtTimePM = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtPersonInCharge = new System.Windows.Forms.TextBox();
-            this.txtLineAssigned = new System.Windows.Forms.TextBox();
+            this.txtSolderPersonInCharge = new System.Windows.Forms.TextBox();
+            this.txtSolderLineAssigned = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtProcessAssigned = new System.Windows.Forms.TextBox();
+            this.txtSolderProcessAssigned = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtControlNo = new System.Windows.Forms.TextBox();
+            this.txtSolderControlNo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtDriverModel = new System.Windows.Forms.TextBox();
+            this.txtSolderModel = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTimeAM = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -124,41 +124,41 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cmbEquipmentType);
-            this.groupBox1.Controls.Add(this.txtPersonInCharge);
-            this.groupBox1.Controls.Add(this.txtLineAssigned);
+            this.groupBox1.Controls.Add(this.txtSolderPersonInCharge);
+            this.groupBox1.Controls.Add(this.txtSolderLineAssigned);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.txtProcessAssigned);
+            this.groupBox1.Controls.Add(this.txtSolderProcessAssigned);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtControlNo);
+            this.groupBox1.Controls.Add(this.txtSolderControlNo);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtDriverModel);
+            this.groupBox1.Controls.Add(this.txtSolderModel);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 97);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(930, 178);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Soldering Equipment Details:";
             // 
-            // txtPersonInCharge
+            // txtSolderPersonInCharge
             // 
-            this.txtPersonInCharge.Location = new System.Drawing.Point(645, 129);
-            this.txtPersonInCharge.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtPersonInCharge.Name = "txtPersonInCharge";
-            this.txtPersonInCharge.Size = new System.Drawing.Size(264, 34);
-            this.txtPersonInCharge.TabIndex = 1;
+            this.txtSolderPersonInCharge.Location = new System.Drawing.Point(645, 129);
+            this.txtSolderPersonInCharge.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSolderPersonInCharge.Name = "txtSolderPersonInCharge";
+            this.txtSolderPersonInCharge.Size = new System.Drawing.Size(264, 34);
+            this.txtSolderPersonInCharge.TabIndex = 1;
             // 
-            // txtLineAssigned
+            // txtSolderLineAssigned
             // 
-            this.txtLineAssigned.Location = new System.Drawing.Point(191, 128);
-            this.txtLineAssigned.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtLineAssigned.Name = "txtLineAssigned";
-            this.txtLineAssigned.Size = new System.Drawing.Size(264, 34);
-            this.txtLineAssigned.TabIndex = 1;
+            this.txtSolderLineAssigned.Location = new System.Drawing.Point(191, 128);
+            this.txtSolderLineAssigned.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSolderLineAssigned.Name = "txtSolderLineAssigned";
+            this.txtSolderLineAssigned.Size = new System.Drawing.Size(264, 34);
+            this.txtSolderLineAssigned.TabIndex = 1;
             // 
             // label10
             // 
@@ -170,13 +170,13 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Person In Charge:";
             // 
-            // txtProcessAssigned
+            // txtSolderProcessAssigned
             // 
-            this.txtProcessAssigned.Location = new System.Drawing.Point(645, 81);
-            this.txtProcessAssigned.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtProcessAssigned.Name = "txtProcessAssigned";
-            this.txtProcessAssigned.Size = new System.Drawing.Size(264, 34);
-            this.txtProcessAssigned.TabIndex = 1;
+            this.txtSolderProcessAssigned.Location = new System.Drawing.Point(645, 81);
+            this.txtSolderProcessAssigned.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSolderProcessAssigned.Name = "txtSolderProcessAssigned";
+            this.txtSolderProcessAssigned.Size = new System.Drawing.Size(264, 34);
+            this.txtSolderProcessAssigned.TabIndex = 1;
             // 
             // label5
             // 
@@ -208,13 +208,13 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Equipment Type:";
             // 
-            // txtControlNo
+            // txtSolderControlNo
             // 
-            this.txtControlNo.Location = new System.Drawing.Point(645, 35);
-            this.txtControlNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtControlNo.Name = "txtControlNo";
-            this.txtControlNo.Size = new System.Drawing.Size(264, 34);
-            this.txtControlNo.TabIndex = 1;
+            this.txtSolderControlNo.Location = new System.Drawing.Point(645, 35);
+            this.txtSolderControlNo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSolderControlNo.Name = "txtSolderControlNo";
+            this.txtSolderControlNo.Size = new System.Drawing.Size(264, 34);
+            this.txtSolderControlNo.TabIndex = 1;
             // 
             // label3
             // 
@@ -226,13 +226,13 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Control #:";
             // 
-            // txtDriverModel
+            // txtSolderModel
             // 
-            this.txtDriverModel.Location = new System.Drawing.Point(191, 35);
-            this.txtDriverModel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtDriverModel.Name = "txtDriverModel";
-            this.txtDriverModel.Size = new System.Drawing.Size(264, 34);
-            this.txtDriverModel.TabIndex = 1;
+            this.txtSolderModel.Location = new System.Drawing.Point(191, 35);
+            this.txtSolderModel.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSolderModel.Name = "txtSolderModel";
+            this.txtSolderModel.Size = new System.Drawing.Size(264, 34);
+            this.txtSolderModel.TabIndex = 1;
             // 
             // label1
             // 
@@ -318,9 +318,9 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(12, 283);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(930, 124);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
@@ -407,16 +407,16 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtTimePM;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtPersonInCharge;
-        private System.Windows.Forms.TextBox txtLineAssigned;
+        private System.Windows.Forms.TextBox txtSolderPersonInCharge;
+        private System.Windows.Forms.TextBox txtSolderLineAssigned;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtProcessAssigned;
+        private System.Windows.Forms.TextBox txtSolderProcessAssigned;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtControlNo;
+        private System.Windows.Forms.TextBox txtSolderControlNo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtDriverModel;
+        private System.Windows.Forms.TextBox txtSolderModel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTimeAM;
         private System.Windows.Forms.Label label8;

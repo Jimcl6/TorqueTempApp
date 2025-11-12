@@ -144,7 +144,7 @@ namespace TorqueTempApp
             
             int recordId = Convert.ToInt32(dataGridView2.CurrentRow.Cells["id"].Value);
 
-            FrmEditTorque editForm = new FrmEditTorque(recordId);
+            FrmEditTemp editForm = new FrmEditTemp(recordId);
             editForm.StartPosition = FormStartPosition.CenterScreen;
             editForm.ShowDialog();
 
@@ -236,7 +236,7 @@ namespace TorqueTempApp
 
             int recordId = Convert.ToInt32(dataGridView2.CurrentRow.Cells["id"].Value);
 
-            FrmEditTorque editForm = new FrmEditTorque(recordId);
+            FrmEditTemp editForm = new FrmEditTemp(recordId);
             editForm.StartPosition = FormStartPosition.CenterScreen;
             editForm.ShowDialog();
 

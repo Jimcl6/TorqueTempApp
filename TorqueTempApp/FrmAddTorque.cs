@@ -23,7 +23,7 @@ namespace TorqueTempApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string query = "INSERT INTO torque_records (date, model_series,driver_model, control_no, screw_type, driver_type, process_assigned, person_in_charge, line_assigned, time_am, torque_am, time_pm, torque_pm, col_remarks, checked_by) " +
+            string query = "INSERT INTO torque_records (date, model_series, driver_model, control_no, screw_type, driver_type, process_assigned, person_in_charge, line_assigned, time_am, torque_am, time_pm, torque_pm, col_remarks, checked_by) " +
                    "VALUES (@date, @model_series, @driver_model, @control_no, @screw_type, @driver_type, @process_assigned, @person_in_charge, @line_assigned, @time_am, @torque_am, @time_pm, @torque_pm, @col_remarks, @checked_by)";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
