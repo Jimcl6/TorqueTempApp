@@ -136,13 +136,13 @@ namespace TorqueTempApp
 
         private void btnSoldEdit_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow == null)
+            if (dataGridView2.CurrentRow == null)
             {
                 MessageBox.Show("Please select a record to edit.", "No Record Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             
-            int recordId = Convert.ToInt32(dataGridView1.CurrentRow.Cells["id"].Value);
+            int recordId = Convert.ToInt32(dataGridView2.CurrentRow.Cells["id"].Value);
 
             FrmEditTorque editForm = new FrmEditTorque(recordId);
             editForm.StartPosition = FormStartPosition.CenterScreen;
@@ -207,6 +207,98 @@ namespace TorqueTempApp
 
                 
                 dataGridView1.DataSource = dv;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error applying filter: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void addToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmAddSolder addSolder = new FrmAddSolder();
+            addSolder.StartPosition = FormStartPosition.CenterScreen;
+
+
+            if (addSolder.ShowDialog() == DialogResult.OK)
+            {
+                LoadTempRecords();
+            }
+        }
+
+        private void editToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.CurrentRow == null)
+            {
+                MessageBox.Show("Please select a record to edit.", "No Record Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int recordId = Convert.ToInt32(dataGridView2.CurrentRow.Cells["id"].Value);
+
+            FrmEditTorque editForm = new FrmEditTorque(recordId);
+            editForm.StartPosition = FormStartPosition.CenterScreen;
+            editForm.ShowDialog();
+
+            if (editForm.DialogResult == DialogResult.OK)
+            {
+                LoadTempRecords();
+            }
+        }
+
+        private void btnApplyFilterTemp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (string.IsNullOrWhiteSpace(txtFilterTemp.Text))
+                {
+                    MessageBox.Show("Please enter a value to filter.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string filterValue = txtFilterTemp.Text.Trim();
+                string filterColumn = string.Empty;
+
+
+                if (rdoDateTemp.Checked)
+                    filterColumn = "date";
+                else if (rdoEquipmentType.Checked)
+                    filterColumn = "equipment_type";
+                else if (rdoModelSeriesTemp.Checked)
+                    filterColumn = "model_series";
+                else if (rdoLineTemp.Checked)
+                    filterColumn = "line_assigned";
+                else
+                {
+                    MessageBox.Show("Please select a filter criterion.", "No Filter Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+                DataView dv = new DataView(originalTempData);
+
+
+                if (rdoDate.Checked)
+                {
+
+                    if (!DateTime.TryParseExact(filterValue, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dateValue))
+                    {
+                        MessageBox.Show("Invalid date format. Please use dd/MM/yyyy.", "Format Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+
+                    dv.RowFilter = string.Format("CONVERT([{0}], 'System.String') LIKE '%{1}%'", filterColumn, dateValue.ToString("yyyy-MM-dd"));
+                }
+                else
+                {
+
+                    dv.RowFilter = string.Format("CONVERT([{0}], 'System.String') LIKE '%{1}%'", filterColumn, filterValue.Replace("'", "''"));
+                }
+
+
+                dataGridView2.DataSource = dv;
             }
             catch (Exception ex)
             {

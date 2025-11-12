@@ -49,11 +49,16 @@
             this.torqueRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.solderingTempToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rdoLineTemp = new System.Windows.Forms.RadioButton();
+            this.rdoModelSeriesTemp = new System.Windows.Forms.RadioButton();
+            this.rdoEquipmentType = new System.Windows.Forms.RadioButton();
+            this.rdoDateTemp = new System.Windows.Forms.RadioButton();
+            this.txtFilterTemp = new System.Windows.Forms.TextBox();
+            this.btnApplyFilterTemp = new System.Windows.Forms.Button();
             this.tabMainControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -61,6 +66,7 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMainControl
@@ -201,6 +207,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.Controls.Add(this.btnSoldEdit);
             this.tabPage2.Controls.Add(this.btnSoldAdd);
@@ -226,7 +233,7 @@
             // 
             // btnSoldEdit
             // 
-            this.btnSoldEdit.Location = new System.Drawing.Point(7, 119);
+            this.btnSoldEdit.Location = new System.Drawing.Point(8, 580);
             this.btnSoldEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSoldEdit.Name = "btnSoldEdit";
             this.btnSoldEdit.Size = new System.Drawing.Size(348, 103);
@@ -237,7 +244,7 @@
             // 
             // btnSoldAdd
             // 
-            this.btnSoldAdd.Location = new System.Drawing.Point(7, 8);
+            this.btnSoldAdd.Location = new System.Drawing.Point(8, 469);
             this.btnSoldAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnSoldAdd.Name = "btnSoldAdd";
             this.btnSoldAdd.Size = new System.Drawing.Size(348, 103);
@@ -264,8 +271,7 @@
             // 
             this.torqueRecordToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.deleteToolStripMenuItem});
+            this.editToolStripMenuItem});
             this.torqueRecordToolStripMenuItem.Name = "torqueRecordToolStripMenuItem";
             this.torqueRecordToolStripMenuItem.Size = new System.Drawing.Size(142, 29);
             this.torqueRecordToolStripMenuItem.Text = "Torque Record";
@@ -273,29 +279,22 @@
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(164, 34);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(164, 34);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(164, 34);
-            this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // solderingTempToolStripMenuItem
             // 
             this.solderingTempToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addToolStripMenuItem1,
-            this.editToolStripMenuItem1,
-            this.deleteToolStripMenuItem1});
+            this.editToolStripMenuItem1});
             this.solderingTempToolStripMenuItem.Name = "solderingTempToolStripMenuItem";
             this.solderingTempToolStripMenuItem.Size = new System.Drawing.Size(152, 29);
             this.solderingTempToolStripMenuItem.Text = "Soldering Temp";
@@ -303,20 +302,94 @@
             // addToolStripMenuItem1
             // 
             this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
-            this.addToolStripMenuItem1.Size = new System.Drawing.Size(164, 34);
+            this.addToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
             this.addToolStripMenuItem1.Text = "Add";
+            this.addToolStripMenuItem1.Click += new System.EventHandler(this.addToolStripMenuItem1_Click);
             // 
             // editToolStripMenuItem1
             // 
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(164, 34);
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
             this.editToolStripMenuItem1.Text = "Edit";
+            this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
             // 
-            // deleteToolStripMenuItem1
+            // groupBox2
             // 
-            this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
-            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(164, 34);
-            this.deleteToolStripMenuItem1.Text = "Delete";
+            this.groupBox2.Controls.Add(this.rdoLineTemp);
+            this.groupBox2.Controls.Add(this.rdoModelSeriesTemp);
+            this.groupBox2.Controls.Add(this.rdoEquipmentType);
+            this.groupBox2.Controls.Add(this.rdoDateTemp);
+            this.groupBox2.Controls.Add(this.txtFilterTemp);
+            this.groupBox2.Controls.Add(this.btnApplyFilterTemp);
+            this.groupBox2.Location = new System.Drawing.Point(9, 8);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(347, 201);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Filter By:";
+            // 
+            // rdoLineTemp
+            // 
+            this.rdoLineTemp.AutoSize = true;
+            this.rdoLineTemp.Location = new System.Drawing.Point(187, 112);
+            this.rdoLineTemp.Name = "rdoLineTemp";
+            this.rdoLineTemp.Size = new System.Drawing.Size(72, 32);
+            this.rdoLineTemp.TabIndex = 9;
+            this.rdoLineTemp.TabStop = true;
+            this.rdoLineTemp.Text = "Line";
+            this.rdoLineTemp.UseVisualStyleBackColor = true;
+            // 
+            // rdoModelSeriesTemp
+            // 
+            this.rdoModelSeriesTemp.AutoSize = true;
+            this.rdoModelSeriesTemp.Location = new System.Drawing.Point(7, 113);
+            this.rdoModelSeriesTemp.Name = "rdoModelSeriesTemp";
+            this.rdoModelSeriesTemp.Size = new System.Drawing.Size(150, 32);
+            this.rdoModelSeriesTemp.TabIndex = 9;
+            this.rdoModelSeriesTemp.TabStop = true;
+            this.rdoModelSeriesTemp.Text = "Model Series";
+            this.rdoModelSeriesTemp.UseVisualStyleBackColor = true;
+            // 
+            // rdoEquipmentType
+            // 
+            this.rdoEquipmentType.AutoSize = true;
+            this.rdoEquipmentType.Location = new System.Drawing.Point(187, 74);
+            this.rdoEquipmentType.Name = "rdoEquipmentType";
+            this.rdoEquipmentType.Size = new System.Drawing.Size(78, 32);
+            this.rdoEquipmentType.TabIndex = 9;
+            this.rdoEquipmentType.TabStop = true;
+            this.rdoEquipmentType.Text = "Type";
+            this.rdoEquipmentType.UseVisualStyleBackColor = true;
+            // 
+            // rdoDateTemp
+            // 
+            this.rdoDateTemp.AutoSize = true;
+            this.rdoDateTemp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.rdoDateTemp.Location = new System.Drawing.Point(7, 75);
+            this.rdoDateTemp.Name = "rdoDateTemp";
+            this.rdoDateTemp.Size = new System.Drawing.Size(78, 32);
+            this.rdoDateTemp.TabIndex = 9;
+            this.rdoDateTemp.TabStop = true;
+            this.rdoDateTemp.Text = "Date";
+            this.rdoDateTemp.UseVisualStyleBackColor = true;
+            // 
+            // txtFilterTemp
+            // 
+            this.txtFilterTemp.Location = new System.Drawing.Point(7, 34);
+            this.txtFilterTemp.Name = "txtFilterTemp";
+            this.txtFilterTemp.Size = new System.Drawing.Size(333, 34);
+            this.txtFilterTemp.TabIndex = 8;
+            // 
+            // btnApplyFilterTemp
+            // 
+            this.btnApplyFilterTemp.Location = new System.Drawing.Point(7, 152);
+            this.btnApplyFilterTemp.Margin = new System.Windows.Forms.Padding(4);
+            this.btnApplyFilterTemp.Name = "btnApplyFilterTemp";
+            this.btnApplyFilterTemp.Size = new System.Drawing.Size(333, 39);
+            this.btnApplyFilterTemp.TabIndex = 7;
+            this.btnApplyFilterTemp.Text = "Search";
+            this.btnApplyFilterTemp.UseVisualStyleBackColor = true;
+            this.btnApplyFilterTemp.Click += new System.EventHandler(this.btnApplyFilterTemp_Click);
             // 
             // FrmMain
             // 
@@ -343,6 +416,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,11 +432,9 @@
         private System.Windows.Forms.ToolStripMenuItem torqueRecordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem solderingTempToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem1;
         private System.Windows.Forms.Button btnTorqueEdit;
         private System.Windows.Forms.Button btnTorqueAdd;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -375,6 +448,13 @@
         private System.Windows.Forms.RadioButton rdoDate;
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Button btnApplyFilterTorque;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton rdoLineTemp;
+        private System.Windows.Forms.RadioButton rdoModelSeriesTemp;
+        private System.Windows.Forms.RadioButton rdoEquipmentType;
+        private System.Windows.Forms.RadioButton rdoDateTemp;
+        private System.Windows.Forms.TextBox txtFilterTemp;
+        private System.Windows.Forms.Button btnApplyFilterTemp;
     }
 }
 
